@@ -1,0 +1,31 @@
+.input {
+  @apply shadow-sm;
+  @apply py-b;
+  @apply px-b;
+  @apply focus:ring-seaGreen;
+  @apply border;
+  @apply focus:border-seaGreen;
+  @apply block;
+  @apply w-full;
+  border-color: #ccc;
+  border-radius: 3px;
+  outline: none;
+
+  @apply f-b1;
+  @apply font-thin;
+}
+
+.select {
+  @apply text-steel;
+  @apply f-b1;
+
+  > select {
+    @apply py-b;
+    @apply px-c;
+    @apply border;
+    border-color: #ccc;
+    border-radius: 3px;
+    @apply focus:ring-seaGreen;
+    @apply focus:border-seaGreen;
+  }
+}

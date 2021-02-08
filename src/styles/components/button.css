@@ -1,0 +1,11 @@
+.button {
+  @apply text-white;
+  @apply bg-seaGreen;
+  @apply f-b1;
+  @apply py-c;
+  @apply px-d;
+  @apply inline-block;
+  @apply items-center;
+  @apply hover:bg-seaGreenDark;
+  @apply hover:text-white;
+}
