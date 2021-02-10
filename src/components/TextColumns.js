@@ -7,7 +7,6 @@ export default function TextColumns({
   columns,
   className = "",
 }) {
-  console.log(columns);
   let columnClass;
   switch (columnAmount) {
     case "4":

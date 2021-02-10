@@ -27,8 +27,6 @@ export default ({
     })
   );
 
-  console.log(articlesByCategory);
-
   return (
     <Layout>
       <Hero {...pageData.hero} className="mb-20" />
@@ -68,7 +66,6 @@ export default ({
         </nav>
         <ul className="">
           {articlesByCategory[currentCategory].map((article, i) => {
-            console.log(article.previewImage);
             return (
               <li
                 key={article.slug}
@@ -103,7 +100,7 @@ export default ({
                 </div>
                 <Link
                   className="absolute block w-full top-0 right-0 bottom-0 left-0"
-                  to={`news/${article.slug}`}
+                  to={`/news/${article.slug}`}
                 >
                   <span className="sr">Read More</span>
                 </Link>

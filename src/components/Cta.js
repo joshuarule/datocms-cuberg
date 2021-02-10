@@ -35,8 +35,6 @@ export default ({
   const imageColSize = largeMedia ? "lg:col-span-8" : "lg:col-span-6";
   const textColSize = largeMedia ? "lg:col-span-4" : "lg:col-span-6";
 
-  console.log(media);
-
   return (
     <section
       id={slugify(title)}
