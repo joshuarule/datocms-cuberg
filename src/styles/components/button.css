@@ -1,7 +1,7 @@
 .button {
   @apply text-white;
   @apply bg-seaGreen;
-  @apply f-b1;
+  @apply h4;
   @apply py-c;
   @apply px-d;
   @apply inline-block;

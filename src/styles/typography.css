@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "NorthvoltSansPro-Thin";
+  src: url("../assets/fonts/NorthvoltSansProEOT/NorthvoltSansPro-Thin.eot");
+  src: local("NorthvoltSansPro-Thin"),
+    url(../assets/fonts/NorthvoltSansProWOFF2/NorthvoltSansPro-Thin.woff2)
+      format("woff2"),
+    url(../assets/fonts/NorthvoltSansProWOFF/NorthvoltSansPro-Thin.woff)
+      format("woff");
+}
+
+@font-face {
+  font-family: "NorthvoltSansPro-Light";
+  src: url("../assets/fonts/NorthvoltSansProEOT/NorthvoltSansPro-Light.eot");
+  src: local("NorthvoltSansPro-Light"),
+    url(../assets/fonts/NorthvoltSansProWOFF2/NorthvoltSansPro-Light.woff2)
+      format("woff2"),
+    url(../assets/fonts/NorthvoltSansProWOFF/NorthvoltSansPro-Light.woff)
+      format("woff");
+}
+
+@font-face {
+  font-family: "NorthvoltSansPro-Regular";
+  src: url("../assets/fonts/NorthvoltSansProEOT/NorthvoltSansPro-Regular.eot");
+  src: local("NorthvoltSansPro-Regular"),
+    url(../assets/fonts/NorthvoltSansProWOFF2/NorthvoltSansPro-Regular.woff2)
+      format("woff2"),
+    url(../assets/fonts/NorthvoltSansProWOFF/NorthvoltSansPro-Regular.woff)
+      format("woff");
+}
+
+@font-face {
+  font-family: "NorthvoltSansPro-Medium";
+  src: url("../assets/fonts/NorthvoltSansProEOT/NorthvoltSansPro-Medium.eot");
+  src: local("NorthvoltSansPro-Medium"),
+    url(../assets/fonts/NorthvoltSansProWOFF2/NorthvoltSansPro-Medium.woff2)
+      format("woff2"),
+    url(../assets/fonts/NorthvoltSansProWOFF/NorthvoltSansPro-Medium.woff)
+      format("woff");
+}
+
+@font-face {
+  font-family: "NorthvoltSansPro-Bold";
+  src: url("../assets/fonts/NorthvoltSansProEOT/NorthvoltSansPro-Bold.eot");
+  src: local("NorthvoltSansPro-Bold"),
+    url(../assets/fonts/NorthvoltSansProWOFF2/NorthvoltSansPro-Bold.woff2)
+      format("woff2"),
+    url(../assets/fonts/NorthvoltSansProWOFF/NorthvoltSansPro-Bold.woff)
+      format("woff");
+}
+
+@font-face {
+  font-family: "NorthvoltSansPro-ExtraBold";
+  src: url("../assets/fonts/NorthvoltSansProEOT/NorthvoltSansPro-ExtraBold.eot");
+  src: local("NorthvoltSansPro-ExtraBold"),
+    url(../assets/fonts/NorthvoltSansProWOFF2/NorthvoltSansPro-ExtraBold.woff2)
+      format("woff2"),
+    url(../assets/fonts/NorthvoltSansProWOFF/NorthvoltSansPro-ExtraBold.woff)
+      format("woff");
+}
+
+@font-face {
+  font-family: "NorthvoltSansPro-Black";
+  src: url("../assets/fonts/NorthvoltSansProEOT/NorthvoltSansPro-Black.eot");
+  src: local("NorthvoltSansPro-Black"),
+    url(../assets/fonts/NorthvoltSansProWOFF2/NorthvoltSansPro-Black.woff2)
+      format("woff2"),
+    url(../assets/fonts/NorthvoltSansProWOFF/NorthvoltSansPro-Black.woff)
+      format("woff");
+}

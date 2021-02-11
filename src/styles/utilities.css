@@ -44,26 +44,26 @@
       margin-right: -50vw;
     }
 
-    .f-h1 {
+    .h1 {
       @apply text-h1;
     }
 
-    .f-h2 {
+    .h2 {
       @apply text-h2;
     }
 
-    .f-h3 {
+    .h3 {
       @apply text-h3;
     }
 
-    .f-b0 {
-      @apply text-b0;
+    .h4 {
+      @apply text-h4;
     }
-    .f-b1 {
-      @apply text-b1;
+    .h5 {
+      @apply text-h5;
     }
-    .f-b2 {
-      @apply text-b2;
+    .h6 {
+      @apply text-h6;
     }
   }
 }

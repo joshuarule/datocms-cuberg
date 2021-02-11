@@ -50,7 +50,7 @@ export default ({
         `}
       >
         <div className="">
-          {title && <h2 className="f-h3 mb-e">{title}</h2>}
+          {title && <h2 className="h3 mb-e">{title}</h2>}
           {subtitle && <p className="">{subtitle}</p>}
           {bodyNode && <RichText content={bodyNode} />}
           {label && path && (

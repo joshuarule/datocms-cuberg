@@ -10,12 +10,12 @@ const IndexPage = ({
 }) => {
   return (
     <Layout>
-      <Hero {...pageData.hero} className="mb-20" />
+      <Hero {...pageData.hero} xlSize={true} className="mb-20" />
       <div className="container">
         <Cta {...pageData.ctaOne} />
         <Cta {...pageData.ctaTwo} />
       </div>
-      <Hero {...pageData.featureHero} className="mb-20" />
+      <Hero {...pageData.featureHero} theme="dark" className="mb-20" />
       <div>
         <div className="container">
           <Cta {...pageData.featureImageGrid} />

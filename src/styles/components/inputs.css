@@ -11,13 +11,13 @@
   border-radius: 3px;
   outline: none;
 
-  @apply f-b1;
+  @apply h4;
   @apply font-thin;
 }
 
 .select {
   @apply text-steel;
-  @apply f-b1;
+  @apply h4;
 
   > select {
     @apply py-b;
