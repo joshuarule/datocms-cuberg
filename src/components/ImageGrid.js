@@ -27,12 +27,12 @@ export default function ImageGrid({
   return (
     <div className={`${className ? className : ""}`}>
       <div className="text-center">
-        {title && <h1 className="mb-d">{title}</h1>}
+        {title && <h1 className="mb-e h1 font-regular">{title}</h1>}
         {bodyNode && <RichText content={bodyNode} className="mb-d" />}
       </div>
       <ul
         className={`md:grid ${columnClass} ${
-          gridClasses ? gridClasses : "lg:gap-1 lg:gap-y-e "
+          gridClasses ? gridClasses : "lg:gap-8"
         } `}
       >
         {item.map((node, i) => {
@@ -66,7 +66,7 @@ export default function ImageGrid({
                 key={`image-${i}`}
                 className={`gridImage ${
                   node.image.path ? "gridImage--hasLink" : ""
-                } overflow-hidden md-max:mb-b relative aspect-w-16 aspect-h-9`}
+                } overflow-hidden md-max:mb-b relative aspect-w-5 aspect-h-4`}
               >
                 <Img
                   className="object-cover w-full h-full"
@@ -76,7 +76,7 @@ export default function ImageGrid({
                 />
                 {node.title && (
                   <div className="flex items-end absolute fill left-0 right-0 bottom-0 top-0">
-                    <h3 className="absolute bottom-0 left-0 p-c text-white">
+                    <h3 className="absolute bottom-0 left-0 p-c text-white h3 lg:h2">
                       {node.title}
                     </h3>
                     <div className="flex-1 h-1/3 bg-gradient-to-t from-black-40 to-transparent"></div>
@@ -90,7 +90,10 @@ export default function ImageGrid({
                 )}
               </div>
               {node.descriptionNode && (
-                <RichText content={node.descriptionNode} className="mt-c" />
+                <RichText
+                  content={node.descriptionNode}
+                  className="mt-6 px-8 h5"
+                />
               )}
             </div>
           );

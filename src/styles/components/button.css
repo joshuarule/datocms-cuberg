@@ -1,11 +1,12 @@
 .button {
   @apply text-white;
-  @apply bg-seaGreen;
+  @apply font-medium;
+  @apply bg-blue;
   @apply h4;
   @apply py-c;
   @apply px-d;
   @apply inline-block;
   @apply items-center;
-  @apply hover:bg-seaGreenDark;
+  @apply hover:bg-blue-75;
   @apply hover:text-white;
 }

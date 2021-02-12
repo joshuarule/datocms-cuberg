@@ -19,17 +19,25 @@ const IndexPage = ({
       <div>
         <div className="container">
           <Cta {...pageData.featureImageGrid} />
-          <h1 className="mb-8">{pageData.newsTitle}</h1>
+          <h1 className="mb-8 text-center text-xl">{pageData.newsTitle}</h1>
+
+          {/* News */}
+
           <div className="md:grid md:grid-cols-3">
             {articles.nodes.map(({ title, previewImage, slug }) => (
               <aside className="mb-8">
-                <Img
-                  className="mb-4"
-                  fluid={previewImage.fluid}
-                  alt={previewImage.alt}
-                />
-                <h1 className="mb-8">{title}</h1>
-                <Link to={`news/${slug}`}>Read More</Link>
+                <div className="aspect-h-3 aspect-w-4 relative overflow-hidden">
+                  <Img
+                    fluid={previewImage.fluid}
+                    style={{ position: "absolute" }}
+                    className="object-cover w-full h-full"
+                    alt={previewImage.alt}
+                  />
+                </div>
+                <div className="border-b-4 bg-rust-20 p-10 mx-6 relative -top-8">
+                  <h1 className="mb-8">{title}</h1>
+                  <Link to={`news/${slug}`}>[Read More]</Link>
+                </div>
               </aside>
             ))}
           </div>
@@ -65,20 +73,7 @@ export const query = graphql`
         ...heroImageFields
       }
       featureImageGrid {
-        bodyNode {
-          childMarkdownRemark {
-            html
-          }
-        }
-        title
-        path
-        label
-        imageGrid {
-          alt
-          fluid {
-            ...GatsbyDatoCmsFluid
-          }
-        }
+        ...featureImageGridFields
       }
       newsTitle
       newsLinkLabel

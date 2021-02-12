@@ -15,8 +15,6 @@
   --unit-g: calc(var(--unit-1) * 21);
 
   /* Colors */
-  --c-brand: #f53d00;
-  --c-brand--dark: #d32d00;
 
   --c-blue: #34568b;
   --c-blue-75: color(#34568b tint(25%));
@@ -42,6 +40,9 @@
   --c-rust-75: color(#e4d5d3 tint(25%));
   --c-rust-50: color(#e4d5d3 tint(50%));
   --c-rust-20: color(#e4d5d3 tint(80%));
+
+  --c-brand: var(--c-blue);
+  --c-brand--dark: var(--c-blue-75);
 
   /* Primary */
   --c-navy: #2b2c58;
@@ -78,7 +79,7 @@
   --c-footerBg: #f9f4ec;
 
   /* Font Sizing */
-  --f-h1--size: 30px;
+  --f-h1--size: 40px;
   --f-h1--lineHeight: 36px;
 
   --f-h2--size: 32px;

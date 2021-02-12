@@ -65,6 +65,25 @@ export const IMAGE_GRID = graphql`
   }
 `;
 
+export const FEATURED_IMAGE_GRID = graphql`
+  fragment featureImageGridFields on DatoCmsFeatureImage {
+    bodyNode {
+      childMarkdownRemark {
+        html
+      }
+    }
+    title
+    path
+    label
+    imageGrid {
+      alt
+      fluid {
+        ...GatsbyDatoCmsFluid
+      }
+    }
+  }
+`;
+
 export const HERO_TEXT_FIELDS = graphql`
   fragment heroTextFields on DatoCmsHeroText {
     title

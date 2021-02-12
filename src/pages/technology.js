@@ -17,12 +17,13 @@ export default function technology({
       <div className="container">
         <HeroText
           {...pageData.technologyIntroHero}
-          className="mb-f flex flex-col items-center text-center"
+          xlSize={true}
+          className="mb-g flex flex-col items-center text-center"
         />
         <Cta {...pageData.ctaOne} />
         <Cta {...pageData.ctaTwo} />
         <ImageGrid {...pageData.imageGrid} className="mb-g" />
-        <Hero {...pageData.featureHero} className="mb-20" />
+        <Hero {...pageData.featureHero} className="mb-d" />
         <TextColumns {...pageData.textGridOne} className="mb-20" />
         <Cta {...pageData.ctaThree} />
       </div>

@@ -37,7 +37,7 @@ export default ({
 
   return (
     <section
-      id={slugify(title)}
+      id={title ? slugify(title) : "cta"}
       className={`cta 
         md:grid md:grid-cols-1 lg:grid-cols-12 mb-f lg:mb-g ${className}
         ${textAlign}
@@ -50,7 +50,7 @@ export default ({
         `}
       >
         <div className="">
-          {title && <h2 className="h3 mb-e">{title}</h2>}
+          {title && <h2 className="mb-e h2 font-medium">{title}</h2>}
           {subtitle && <p className="">{subtitle}</p>}
           {bodyNode && <RichText content={bodyNode} />}
           {label && path && (
@@ -65,8 +65,15 @@ export default ({
 
       {imageGrid && (
         <div className={`${imageColSize} md:grid md:grid-cols-2 gap-8`}>
-          {imageGrid.map((image) => {
-            return <Img className={``} fluid={image.fluid} alt={image.alt} />;
+          {imageGrid.map((image, i) => {
+            return (
+              <Img
+                key={`image-${i}`}
+                className={``}
+                fluid={image.fluid}
+                alt={image.alt}
+              />
+            );
           })}
         </div>
       )}
