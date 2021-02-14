@@ -1,0 +1,28 @@
+.timeline {
+  padding-bottom: 100px;
+}
+
+.timeline-event {
+  display: inline-block;
+  width: 50%;
+  @apply border-r;
+  @apply pr-20;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--c-black-40);
+    z-index: -1;
+  }
+
+  &:nth-child(2n) {
+    transform: translateY(50%);
+    @apply border-r-0;
+    @apply pr-0;
+    @apply pl-20;
+  }
+}

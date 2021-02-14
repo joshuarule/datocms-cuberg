@@ -35,6 +35,7 @@ export const TEXT_COLUMNS = graphql`
           html
         }
       }
+      title
     }
     title
   }
