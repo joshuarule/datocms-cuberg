@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Img from "gatsby-image";
+import Modal from "react-modal";
 
 import Layout from "../components/layout";
 import Hero from "../components/Hero";
@@ -7,6 +8,9 @@ import ImageGrid from "../components/ImageGrid";
 import Cta from "../components/Cta";
 import TextColumns from "../components/TextColumns";
 import HeroText from "../components/HeroText";
+import Icon from "../components/Icon";
+
+Modal.setAppElement("#portal");
 
 export default ({
   data: {
@@ -50,6 +54,9 @@ export default ({
   const [currentCategory, setCurrentCategory] = useState(
     Object.keys(peopleByCategory)[0]
   );
+
+  const [activeProfile, setActiveProfile] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
 
   return (
     <Layout>
@@ -118,7 +125,10 @@ export default ({
                   <p className="mb-c">{person.bio}</p>
                   <span className="group-hover:text-seaGreen">[Read More]</span>
                   <button
-                    onClick={() => alert("set active profile")}
+                    onClick={() => {
+                      setActiveProfile(person);
+                      setModalVisible(true);
+                    }}
                     className="absolute block w-full top-0 right-0 bottom-0 left-0"
                   >
                     <span className="sr">Read Full Bio</span>
@@ -176,6 +186,74 @@ export default ({
           </ol>
         </section>
       </div>
+      <Modal
+        isOpen={isModalVisible}
+        // onAfterOpen={afterOpenModal}
+        onRequestClose={() => setModalVisible(false)}
+        shouldCloseOnOverlayClick={true}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0,0,0,.65)",
+            zIndex: 100,
+          },
+          content: {
+            maxWidth: "calc(1280px - calc(var(--unit-e) * 2))",
+            paddingLeft: "var(--unit-g)",
+            paddingRight: "var(--unit-g)",
+            paddingBottom: "var(--unit-g)",
+            paddingTop: "var(--unit-e)",
+            width: "calc(100% - calc(var(--unit-e) * 2))",
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            transform: "translate(-50%, -50%)",
+          },
+        }}
+        contentLabel="Person Modal"
+        bodyOpenClassName={"menu-is-open"}
+      >
+        {activeProfile && (
+          <div>
+            <div className="mb-c">
+              {activeProfile.categories.map((item) => item.category)}
+            </div>
+            <h1 className="h1 mb-c">
+              {activeProfile.firstName} {activeProfile.lastName}
+            </h1>
+            <div className="mb-e">{activeProfile.job}</div>
+            <div className="md:grid md:grid-cols-3">
+              <div className="flex justify-center md:block">
+                <div className="flex-1">
+                  <div className="aspect-h-1 aspect-w-1 relative overflow-hidden mb-d">
+                    <Img
+                      fluid={activeProfile.image.fluid}
+                      alt={activeProfile.image.alt}
+                      style={{
+                        position: "absolute",
+                      }}
+                      imgStyle={{
+                        height: "auto",
+                      }}
+                      className={`absolute`}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="md:col-span-2" style={{ columns: 2 }}>
+                {activeProfile.bio}
+              </div>
+            </div>
+            <button
+              className="absolute top-0 right-0 p-12"
+              onClick={() => setModalVisible(false)}
+            >
+              <span className="sr-only">close</span>
+              <Icon name="close" />
+            </button>
+          </div>
+        )}
+      </Modal>
     </Layout>
   );
 };

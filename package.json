@@ -27,6 +27,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-masonry-component": "^6.2.1",
+    "react-modal": "^3.12.1",
     "react-slick": "^0.25.2",
     "request": "^2.88.2",
     "slick-carousel": "^1.8.1",
