@@ -7,7 +7,7 @@ import RichText from "../components/RichText";
 
 // import SEO from '../components/SEO';
 
-const BlogPost = ({ data: { article } }) => {
+const Article = ({ data: { article } }) => {
   return (
     <Layout>
       <div className="container pt-g my-g">
@@ -83,4 +83,4 @@ export const projectQuery = graphql`
   }
 `;
 
-export default BlogPost;
+export default Article;
