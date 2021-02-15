@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, StaticQuery, graphql } from "gatsby";
 
 import Icon from "./Icon";
 
-export default function Header() {
+export default function Header({ infoBar }) {
   return (
-    <header className="absolute top-0 z-50 left-0 right-0 ">
+    <header
+      className={`absolute ${infoBar ? "top-20" : "top-0"} z-50 left-0 right-0`}
+    >
       <div className="container py-8">
         <nav className="flex justify-between">
           <div style={{ maxWidth: "200px" }}>

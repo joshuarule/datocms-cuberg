@@ -15,7 +15,7 @@ const Hero = ({
 }) => {
   const fontColor = theme === "dark" ? "text-white" : "text-black";
   return (
-    <div className={`${className} relative max-h-screen`}>
+    <div className={`hero relative max-h-screen ${className}`}>
       {media && media[0] && (
         <Img
           alt={media[0].alt}
