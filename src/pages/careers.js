@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import Hero from "../components/Hero";
 import ImageGrid from "../components/ImageGrid";
 import Cta from "../components/Cta";
-import TextColumns from "../components/TextColumns";
+import RichText from "../components/RichText";
 import HeroText from "../components/HeroText";
 
 export default ({
@@ -33,8 +33,30 @@ export default ({
           {/* like the news article styling */}
           {!!quotes.nodes.length && (
             <ul>
-              {quotes.nodes.map((quote) => (
-                <li key={quote.name}>{quote.name}</li>
+              {quotes.nodes.map((quote, i) => (
+                <li
+                  key={`quote-${i}`}
+                  className={`quote mb-g grid grid-cols-2 gap-0 relative group items-center`}
+                >
+                  <div className="quote-image">
+                    <div className="aspect-h-3 aspect-w-4 relative overflow-hidden">
+                      <Img
+                        fluid={quote.image.fluid}
+                        style={{ position: "absolute" }}
+                        className="object-cover w-full h-full"
+                        alt={quote.image.alt}
+                      />
+                    </div>
+                  </div>
+                  <div className="quote-copy flex-1 bg-fog p-f">
+                    <div className="h3 font-bold mb-c">
+                      {quote.name} | {quote.title}
+                    </div>
+                    <blockquote className="h3">
+                      <RichText content={quote.quoteNode} className="mb-d" />
+                    </blockquote>
+                  </div>
+                </li>
               ))}
             </ul>
           )}
@@ -75,6 +97,12 @@ export const query = graphql`
         quoteNode {
           childMarkdownRemark {
             html
+          }
+        }
+        image {
+          alt
+          fluid {
+            ...GatsbyDatoCmsFluid
           }
         }
       }

@@ -205,7 +205,7 @@ export const query = graphql`
       nodes {
         title
         text
-        date
+        date(formatString: "MMMM YYYY")
       }
     }
     allDatoCmsAward(sort: { fields: year }) {

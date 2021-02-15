@@ -92,11 +92,11 @@ export default ({
                   {article.articleCategories.map((category) => (
                     <span>{category.category}</span>
                   ))}
-                  <h1 className="group-hover:text-brand mb-d">
+                  <h1 className="group-hover:text-brand mb-d h2 font-bold">
                     {article.title}
                   </h1>
                   <RichText content={article.excerptNode} className="mb-d" />
-                  <p className="">Read more</p>
+                  <p className="">[Read more]</p>
                 </div>
                 <Link
                   className="absolute block w-full top-0 right-0 bottom-0 left-0"

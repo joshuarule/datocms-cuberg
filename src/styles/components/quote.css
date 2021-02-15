@@ -1,0 +1,17 @@
+.quote {
+  --quoteOffset: -80px;
+  &:nth-child(odd) .quote-copy {
+    position: relative;
+    z-index: 1;
+    left: var(--quoteOffset);
+    margin-right: var(--quoteOffset);
+  }
+
+  &:nth-child(even) .quote-copy {
+    position: relative;
+    z-index: 1;
+    right: var(--quoteOffset);
+    margin-left: var(--quoteOffset);
+    order: -1;
+  }
+}

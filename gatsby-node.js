@@ -1,31 +1,31 @@
-// const path = require(`path`)
-// const { createFilePath } = require(`gatsby-source-filesystem`)
-//
-// exports.createPages = ({ graphql, actions }) => {
-//   const { createPage } = actions
+const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
-//   return new Promise((resolve, reject) => {
-//     graphql(`
-//       {
-//         allDatoCmsWork {
-//           edges {
-//             node {
-//               slug
-//             }
-//           }
-//         }
-//       }
-//     `).then(result => {
-//       result.data.allDatoCmsWork.edges.map(({ node: work }) => {
-//         createPage({
-//           path: `works/${work.slug}`,
-//           component: path.resolve(`./src/templates/work.js`),
-//           context: {
-//             slug: work.slug,
-//           },
-//         })
-//       })
-//       resolve()
-//     })
-//   })
-// }
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allDatoCmsArticle {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `).then((result) => {
+      result.data.allDatoCmsArticle.edges.map(({ node: article }) => {
+        createPage({
+          path: `news/${article.slug}`,
+          component: path.resolve(`./src/pages/article.js`),
+          context: {
+            slug: article.slug,
+          },
+        });
+      });
+      resolve();
+    });
+  });
+};

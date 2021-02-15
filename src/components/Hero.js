@@ -15,11 +15,11 @@ const Hero = ({
 }) => {
   const fontColor = theme === "dark" ? "text-white" : "text-black";
   return (
-    <div className={`${className} relative`}>
+    <div className={`${className} relative max-h-screen`}>
       {media && media[0] && (
         <Img
           alt={media[0].alt}
-          className={"absolute object-fit w-full h-full"}
+          className={"absolute object-fit w-full h-full max-h-screen"}
           fluid={media[0].fluid}
         />
       )}
