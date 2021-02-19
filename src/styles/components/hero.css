@@ -1,5 +1,8 @@
 .hero {
+  max-height: 65vh;
+  min-height: 600px;
+
   .infoBar & {
-    height: calc(100vh - calc(var(--unit-1) * 20));
+    height: calc(65vh - calc(var(--unit-1) * 20));
   }
 }

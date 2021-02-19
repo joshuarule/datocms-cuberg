@@ -43,7 +43,7 @@ export default ({
                   <div className="">
                     <div className="text-h3 font-bold">{job.title}</div>
                     <div className="text-black-60">
-                      {job.location.location_str}. {"FULL TIME?"}
+                      {job.location.location_str}.
                     </div>
                   </div>
                   <div>
