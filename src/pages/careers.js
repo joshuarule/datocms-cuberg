@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 
@@ -12,17 +12,15 @@ import HeroText from "../components/HeroText";
 export default ({
   data: { datoCmsPageCareer: pageData, allDatoCmsEmployeeQuote: quotes },
 }) => {
+  const [jobs, setJobs] = useState();
+
   useEffect(() => {
+    console.log("called");
     fetch("/.netlify/functions/jobs")
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        // jobsData = data
-        // const parsedCategories = parseCategories(jobsData)
-        // setCategories(parsedCategories)
-      });
+      .then((data) => setJobs(data.jobs));
   }, []);
-
+  console.log(jobs);
   return (
     <Layout>
       <Hero {...pageData.hero} className="mb-20" />
@@ -30,8 +28,38 @@ export default ({
         <HeroText {...pageData.featureOne} className="text-center py-g" />
         <Cta {...pageData.ctaOne} className="pb-g" />
         <section className="mb-g">
-          <h1 className="text-center h1">{pageData.positionsSectionTitle}</h1>
-          <p>Loop through workable items</p>
+          <h1 className="text-center h1 mb-e">
+            {pageData.positionsSectionTitle}
+          </h1>
+          {jobs && (
+            <ul className="lg:grid lg:grid-cols-3">
+              {jobs.map((job) => (
+                <li
+                  className="relative py-12 px-8 flex-1 flex flex-col justify-between border border-b-10 hover:border-orange"
+                  style={{
+                    minHeight: "280px",
+                  }}
+                >
+                  <div className="">
+                    <div className="text-h3 font-bold">{job.title}</div>
+                    <div className="text-black-60">
+                      {job.location.location_str}. {"FULL TIME?"}
+                    </div>
+                  </div>
+                  <div>
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="absolute inset-0"
+                    >
+                      <span className="sr-only">View Job</span>
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       </div>
       <Hero {...pageData.featureHero} className="mb-20" />
