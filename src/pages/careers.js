@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import Hero from "../components/Hero";
@@ -11,7 +12,17 @@ import HeroText from "../components/HeroText";
 export default ({
   data: { datoCmsPageCareer: pageData, allDatoCmsEmployeeQuote: quotes },
 }) => {
-  console.log(quotes);
+  useEffect(() => {
+    fetch("/.netlify/functions/jobs")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // jobsData = data
+        // const parsedCategories = parseCategories(jobsData)
+        // setCategories(parsedCategories)
+      });
+  }, []);
+
   return (
     <Layout>
       <Hero {...pageData.hero} className="mb-20" />

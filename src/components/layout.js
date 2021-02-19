@@ -4,7 +4,8 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, location }) => {
+  console.log(location);
   return (
     <StaticQuery
       query={graphql`

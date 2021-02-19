@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Modal from "react-modal";
 
