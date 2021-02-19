@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const WORKABLE_API_ENDPOINT =
-  "https://cuberg.workable.com/spi/v3/jobs?state=published";
+  "https://cuberg.workable.com/spi/v3/jobs?state=published&limit=6";
 
 exports.handler = async (event, context) => {
   const response = await fetch(WORKABLE_API_ENDPOINT, {

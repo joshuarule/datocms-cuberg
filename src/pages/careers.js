@@ -32,7 +32,7 @@ export default ({
             {pageData.positionsSectionTitle}
           </h1>
           {jobs && (
-            <ul className="lg:grid lg:grid-cols-3">
+            <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-e">
               {jobs.map((job) => (
                 <li
                   className="relative py-12 px-8 flex-1 flex flex-col justify-between border border-b-10 hover:border-orange"
@@ -58,6 +58,23 @@ export default ({
                   </div>
                 </li>
               ))}
+              <li
+                className="relative py-12 px-8 flex-1 flex flex-col justify-between bg-orange"
+                style={{
+                  minHeight: "280px",
+                }}
+              >
+                <div className="text-h3 text-white font-bold">View All</div>
+                <span>only show if there are more jobs?</span>
+                <a
+                  href="https://cuberg.workable.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="absolute inset-0"
+                >
+                  <span className="sr-only">View All</span>
+                </a>
+              </li>
             </ul>
           )}
         </section>
