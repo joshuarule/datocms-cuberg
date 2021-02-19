@@ -8,8 +8,7 @@ exports.handler = async (event, context) => {
     withCredentials: true,
     credentials: "include",
     headers: {
-      Authorization:
-        "Bearer 438ff1c1ab37f3dc5c5916ede443d15502e93e453a99a69399d33f4f0cbdfef4",
+      Authorization: `Bearer ${process.env.WORKABLE_API}`,
     },
   });
   const data = await response.json();
